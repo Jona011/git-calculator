@@ -1,0 +1,88 @@
+#include <stdio.h>
+#include <math.h>
+
+// Function to add two numbers
+double add(double x, double y) {
+    return x + y;
+}
+
+// Function to subtract two numbers
+double subtract(double x, double y) {
+    return x - y;
+}
+
+// Function to multiply two numbers
+double multiply(double x, double y) {
+    return x * y;
+}
+
+// Function to divide two numbers
+double divide(double x, double y) {
+    if (y == 0) {
+        printf("Error: Division by zero\n");
+        return 0;
+    }
+    return x / y;
+}
+
+// Function to find the square root of a number
+double square_root(double x) {
+    if (x < 0) {
+        printf("Error: Cannot take square root of a negative number\n");
+        return 0;
+    }
+    return sqrt(x);
+}
+
+// Function to find the power of a number
+double power(double x, double m) {
+    return pow(x, m);
+}
+
+int main() {
+    double num1, num2;
+    int choice;
+
+    printf("Enter first number: ");
+    scanf("%lf", &num1);
+
+    printf("Enter second number: ");
+    scanf("%lf", &num2);
+
+    printf("Enter operation to perform:\n");
+    printf("1. Addition\n");
+    printf("2. Subtraction\n");
+    printf("3. Multiplication\n");
+    printf("4. Division\n");
+    printf("5. Square root\n");
+    printf("6. Power\n");
+    printf("Choice: ");
+    scanf("%d", &choice);
+
+    switch (choice) {
+        case 1:
+            printf("Result: %lf\n", add(num1, num2));
+            break;
+        case 2:
+            printf("Result: %lf\n", subtract(num1, num2));
+            break;
+        case 3:
+            printf("Result: %lf\n", multiply(num1, num2));
+            break;
+        case 4:
+            printf("Result: %lf\n", divide(num1, num2));
+            break;
+        case 5:
+            printf("Result: %lf\n", square_root(num1));
+            break;
+        case 6:
+            printf("Result: %lf\n", power(num1, num2));
+            break;
+        default:
+            printf("Error: Invalid choice\n");
+            break;
+    }
+
+    return 0;
+}
+
